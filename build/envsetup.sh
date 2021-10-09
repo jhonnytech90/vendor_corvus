@@ -648,6 +648,8 @@ function generate_json() {
     echo "======================================================================================="
 }
 
+export SKIP_ABI_CHECKS=true
+
 # Enable ThinLTO Source wide.
 echo "Building with ThinLTO."
 export GLOBAL_THINLTO=true
