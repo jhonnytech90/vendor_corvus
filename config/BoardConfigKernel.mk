@@ -51,7 +51,7 @@ endif
 
 TARGET_KERNEL_HEADERS ?= $(TARGET_KERNEL_SOURCE)
 
-CLANG_PREBUILTS := $(BUILD_TOP)/prebuilts/clang/host/$(HOST_PREBUILT_TAG)/clang-r416183b
+CLANG_PREBUILTS := $(BUILD_TOP)/prebuilts/clang/host/$(HOST_PREBUILT_TAG)/clang-r383902b
 GCC_PREBUILTS := $(BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)
 # arm64 toolchain
 KERNEL_TOOLCHAIN_arm64 := $(GCC_PREBUILTS)/aarch64/aarch64-linux-android-4.9/bin
@@ -96,7 +96,6 @@ endif
 # Needed for CONFIG_COMPAT_VDSO, safe to set for all arm64 builds
 ifeq ($(KERNEL_ARCH),arm64)
    KERNEL_CROSS_COMPILE += CROSS_COMPILE_ARM32="$(KERNEL_TOOLCHAIN_arm)/$(KERNEL_TOOLCHAIN_PREFIX_arm)"
-   KERNEL_CROSS_COMPILE += CROSS_COMPILE_COMPAT="$(KERNEL_TOOLCHAIN_arm)/$(KERNEL_TOOLCHAIN_PREFIX_arm)"
 endif
 
 # Clear this first to prevent accidental poisoning from env
